@@ -1,0 +1,497 @@
+table.main-table > thead > tr > th {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+table.main-table > tbody > tr > td {
+    padding: 0 12px;
+}
+
+table.main-table > tbody > tr > td > button {
+    width: 100%;
+}
+
+button {
+    box-sizing: border-box;
+    border: 4px solid #333aa3;
+    background-color: #fff;
+    border-radius: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    height: 32px;
+}
+
+button + button {
+    margin-left: 16px;
+}
+
+button:hover {
+    background-color: #bbbfff;
+}
+
+ul.blocks-list,
+ul.entities-list,
+ul.add-block-list {
+    list-style: none;
+    width: 1000px;
+    height: 400px;
+    overflow-y: auto;
+    border: 4px solid rgb(0, 0, 0);
+    border-radius: 2px;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+}
+
+ul.blocks-list > li,
+ul.entities-list > li,
+ul.add-block-list > li {
+    background: linear-gradient(0deg, #CCCCCC, #FFFFFF 50%, #CCCCCC 100%);
+    display: flex;
+    flex-direction: row;
+    padding: 4px 8px;
+}
+
+ul.blocks-list > li + li,
+ul.entities-list > li + li,
+ul.add-block-list > li + li {
+    border-top: 1px solid #FFFFFF;
+}
+
+ul.blocks-list > li > div.c1,
+ul.entities-list > li > div.c1 {
+    flex: 2;
+}
+
+ul.blocks-list > li > div.c2,
+ul.entities-list > li > div.c2 {
+    flex: 10;
+    display: flex;
+    flex-direction: column;
+}
+
+ul.blocks-list > li > div.c3,
+ul.entities-list > li > div.c3,
+ul.blocks-list > li > div.c4,
+ul.entities-list > li > div.c4,
+ul.blocks-list > li > div.c5,
+ul.entities-list > li > div.c5 {
+    flex: 5;
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+    justify-content: center;
+}
+
+ul.blocks-list > li > div.c6,
+ul.entities-list > li > div.c6 {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ul.add-block-list > li > div.c1 {
+    flex: 2;
+}
+
+ul.add-block-list > li > div.c2 {
+    flex: 25;
+    display: flex;
+    flex-direction: column;
+}
+
+ul.add-block-list > li > div.c3 {
+    flex: 3;
+}
+
+ul.blocks-list div.desc,
+ul.entities-list div.desc {
+    margin-right: 8px;
+}
+
+ul.blocks-list button.edit,
+ul.entities-list button.edit {
+    width: 80px;
+}
+
+ul.add-block-list button.edit {
+    width: 80px;
+}
+
+.button-highlight {
+    box-shadow: 0 0 8px 4px #64ad55;
+}
+
+.smaller {
+    font-size: 0.75em;
+}
+
+span.text {
+    display: inline-block;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+label.switch-label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+label.switch-label > span {
+    display: inline-block;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    margin: 4px 8px 8px 8px;
+}
+
+div.description {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+input[type=text] {
+    border: 2px solid black;
+    border-radius: 4px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+}
+
+input.search {
+    width: 300px;
+}
+
+/* checkbox start */
+
+input[type=checkbox] {
+    --active: #333aa3;
+    --active-inner: #fff;
+    --focus: 2px rgba(39, 79, 254, 0.3);
+    --border: #BBC1E1;
+    --border-hover: #333aa3;
+    --background: #fff;
+    --disabled: #F6F8FF;
+    --disabled-inner: #E1E6F9;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height: 28px;
+    outline: none;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    margin: 0;
+    cursor: pointer;
+    border: 2px solid var(--bc, var(--border));
+    background: var(--b, var(--background));
+    transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
+}
+
+input[type=checkbox]:after {
+    content: "";
+    display: block;
+    left: 0;
+    top: 0;
+    position: absolute;
+    transition: transform var(--d-t, 0.3s) var(--d-t-e, ease), opacity var(--d-o, 0.2s);
+}
+
+input[type=checkbox]:checked {
+    --b: var(--active);
+    --bc: var(--active);
+    --d-o: .3s;
+    --d-t: .6s;
+    --d-t-e: cubic-bezier(.2, .85, .32, 1);
+}
+
+input[type=checkbox]:disabled {
+    --b: var(--disabled);
+    cursor: not-allowed;
+    opacity: 0.9;
+}
+
+input[type=checkbox]:disabled:checked {
+    --b: var(--disabled-inner);
+    --bc: var(--border);
+}
+
+
+input[type=checkbox]:hover:not(:checked):not(:disabled) {
+    --bc: var(--border-hover);
+}
+
+input[type=checkbox]:focus {
+    box-shadow: 0 0 0 var(--focus);
+}
+
+input[type=checkbox]:not(.switch) {
+    width: 21px;
+}
+
+input[type=checkbox]:not(.switch):after {
+    opacity: var(--o, 0);
+}
+
+input[type=checkbox]:not(.switch):checked {
+    --o: 1;
+}
+
+input[type=checkbox]:not(.switch) {
+    border-radius: 7px;
+}
+
+input[type=checkbox]:not(.switch):after {
+    width: 5px;
+    height: 9px;
+    border: 2px solid var(--active-inner);
+    border-top: 0;
+    border-left: 0;
+    left: 7px;
+    top: 4px;
+    transform: rotate(var(--r, 20deg));
+    box-sizing: border-box;
+}
+
+input[type=checkbox]:not(.switch):checked {
+  --r: 43deg;
+}
+
+input[type=checkbox].switch {
+    width: 56px;
+    border-radius: 14px;
+}
+
+input[type=checkbox].switch:after {
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background: var(--ab, var(--border));
+    transform: translateX(var(--x, 0));
+}
+
+input[type=checkbox].switch:checked {
+  --ab: var(--active-inner);
+  --x: 28px;
+}
+
+input[type=checkbox].switch:disabled:not(:checked):after {
+    opacity: 0.6;
+}
+
+/* checkbox end */
+
+div.edit-block-header {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+}
+
+div.edit-block-settings {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+}
+
+fieldset {
+    border: 4px solid #000000;
+    border-radius: 10px;
+    width: 1000px;
+}
+
+fieldset + fieldset {
+    margin-top: 16px;
+}
+
+legend {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+legend > label {
+    margin-left: 8px;
+}
+
+div.color-box {
+    border: 2px solid #333aa3;
+    display: inline-block;
+    margin-left: 8px;
+    width: 20px;
+    height: 20px;
+}
+
+.color-picker-container {
+    display: inline-block;
+    border: 2px solid #AAAAAA;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.color-picker {
+    display: flex;
+}
+
+.color-picker > div.c2 {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 16px;
+}
+
+.color-picker .color-picker-box {
+    border: 2px solid black;
+    display: inline-block;
+    height: 80px;
+    width: 100px;
+}
+
+.slidercontainer {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.slider {
+    box-sizing: border-box;
+    appearance: none;
+    width: 100%;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #333aa3;
+    cursor: pointer;
+}
+  
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #333aa3;
+    cursor: pointer;
+}
+
+.group-setting {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.group-setting > div {
+    display: flex;
+    align-items: center;
+}
+
+/* cube */
+div.perspective {
+    position: relative;
+    perspective: 900px;
+}
+
+ul.cube {
+    animation: rotateY linear infinite 5s;
+    list-style: none;
+    width: 24px;
+    height: 24px;
+    transform-style: preserve-3d;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    margin: 6px 12px;
+    padding: 0;
+}
+
+ul.cube > li {
+    background-size: 100%;
+    image-rendering: pixelated;
+    /*image-rendering: crisp-edges;*/
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+li.front {
+    transform: rotateY(30deg) rotateX(90deg) translateY(50%) rotateX(-90deg);
+}
+
+li.left {
+    transform: rotateY(30deg) translateX(-50%) rotateY(-90deg);
+}
+
+li.back {
+    transform: rotateY(30deg) rotateY(180deg) rotateX(90deg) translateY(50%) rotateX(-90deg);
+}
+
+li.right {
+    transform: rotateY(30deg) translateX(50%) rotateY(90deg);
+}
+
+li.top {
+    transform: rotateY(30deg) translateY(-50%) rotateX(90deg);
+}
+
+li.bottom {
+    transform: rotateY(30deg) translateY(50%) rotateX(-90deg);
+}
+
+/* copied */
+
+@keyframes rotateY {
+    from {
+        transform: rotateY(0) rotateX(45deg);
+    }
+    to {
+        transform: rotateY(359.99deg) rotateX(45deg);
+    }
+}
+
+/* Kill Aura */
+
+ul.kill-aura-priority-list {
+    list-style: none;
+    width: 1000px;
+    height: 400px;
+    overflow-y: auto;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+}
+
+ul.kill-aura-priority-list > li {
+    background: linear-gradient(0deg, #CCCCCC, #FFFFFF 50%, #CCCCCC 100%);
+    display: flex;
+    flex-direction: row;
+    padding: 4px 8px;
+}
+
+ul.kill-aura-priority-list > li + li {
+    border-top: 1px solid #FFFFFF;
+}

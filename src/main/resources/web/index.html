@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zergatul Cheat Utils</title>
+    <link rel="stylesheet" type="text/css" href="app.css">
+    <script src="axios.js"></script>
+</head>
+<body>
+
+    <div id="vue-app">
+
+        <div v-if="current == 'main'">
+            <div style="margin-bottom: 16px; display: none;">
+                <input type="text" v-model="newname">
+                <button v-on:click="changeName()">Change Name</button>
+            </div>
+            <div style="padding-top: 16px; display: none;">
+                <button v-on:click="hardSwitch()">Hard Switch</button>
+            </div>
+
+            <table class="main-table">
+                <thead>
+                    <tr>
+                        <th>Automation</th>
+                        <th>ESP</th>
+                        <th>Hacks</th>
+                        <th>Visuals</th>
+                        <th>Utility</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <button @click="current = 'auto-disconnect'">Auto Disconnect</button>
+                        </td>
+                        <td>
+                            <button @click="current = 'blocks'">Blocks</button>
+                        </td>
+                        <td>
+                            <button @click="current = 'boat-hack'">Boat</button>
+                        </td>
+                        <td>
+                            <button @click="current = 'full-bright'">Full Bright</button>
+                        </td>
+                        <td>
+                            <button @click="current = 'hold-key'">Hold Key</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button @click="current = 'kill-aura'">Kill Aura</button>
+                        </td>
+                        <td>
+                            <button @click="current = 'entities'">Entities</button>
+                        </td>
+                        <td>
+                            <button @click="current = 'elytra-hack'">Elytra</button>
+                        </td>
+                        <td>
+                            <button @click="current = 'armor-overlay'">Armor Overlay</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button @click="current = 'auto-fish'">Auto Fish</button>
+                        </td>
+                        <td>
+                            <button @click="current = 'ender-pearl-path'">Ender Pearl Path</button>
+                        </td>
+                        <td>
+                            <button @click="current = 'pig-hack'">Pig</button>
+                        </td>
+                        <td>
+                            <button @click="current = 'shulker-tooltip'">Shulker Tooltip</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button @click="current = 'light-level'">Light Level</button>
+                        </td>
+                        <td>
+                            <button @click="current = 'auto-criticals'">Auto Criticals</button>
+                        </td>
+                        <td>
+                            <button @click="current = 'bee-tooltip'">Bee Container Tooltip</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button @click="current = 'end-city-chunks'">End City Chunks</button>
+                        </td>
+                        <td>
+                            <button @click="current = 'fly-hack'">Fly Hack</button>
+                        </td>
+                        <td>
+                            <button @click="current = 'exploration-mini-map'">Exploration Mini Map</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button @click="current = 'entity-owner'">Entity Owner</button>
+                        </td>
+                        <td></td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <blocks-config
+            v-if="current == 'blocks'"
+            @back="backToMain()">
+        </blocks-config>
+
+        <entities-config
+            v-if="current == 'entities'"
+            @back="backToMain()">
+        </entities-config>
+
+        <auto-fish-config
+            v-if="current == 'auto-fish'"
+            @back="backToMain()">
+        </auto-fish-config>
+
+        <full-bright-config
+            v-if="current == 'full-bright'"
+            @back="backToMain()">
+        </full-bright-config>
+
+        <armor-overlay-config
+            v-if="current == 'armor-overlay'"
+            @back="backToMain()">
+        </armor-overlay-config>
+
+        <kill-aura-config
+            v-if="current == 'kill-aura'"
+            @back="backToMain()">
+        </kill-aura-config>
+
+        <boat-hack-config
+            v-if="current == 'boat-hack'"
+            @back="backToMain()">
+        </boat-hack-config>
+
+        <elytra-hack-config
+            v-if="current == 'elytra-hack'"
+            @back="backToMain()">
+        </elytra-hack-config>
+
+        <pig-hack-config
+            v-if="current == 'pig-hack'"
+            @back="backToMain()">
+        </pig-hack-config>
+
+        <auto-disconnect-config
+            v-if="current == 'auto-disconnect'"
+            @back="backToMain()">
+        </auto-disconnect-config>
+
+        <shulker-tooltip-config
+            v-if="current == 'shulker-tooltip'"
+            @back="backToMain()">
+        </shulker-tooltip-config>
+
+        <bee-container-tooltip-config
+            v-if="current == 'bee-tooltip'"
+            @back="backToMain()">
+        </bee-container-tooltip-config>
+
+        <ender-pearl-path-config
+            v-if="current == 'ender-pearl-path'"
+            @back="backToMain()">
+        </ender-pearl-path-config>
+
+        <end-city-chunks-config
+            v-if="current == 'end-city-chunks'"
+            @back="backToMain()">
+        </end-city-chunks-config>
+
+        <light-level-config
+            v-if="current == 'light-level'"
+            @back="backToMain()">
+        </light-level-config>
+
+        <hold-key-config
+            v-if="current == 'hold-key'"
+            @back="backToMain()">
+        </hold-key-config>
+
+        <entity-owner-config
+            v-if="current == 'entity-owner'"
+            @back="backToMain()">
+        </entity-owner-config>
+
+        <exploration-mini-map-config
+            v-if="current == 'exploration-mini-map'"
+            @back="backToMain()">
+        </exploration-mini-map-config>
+
+        <auto-criticals-config
+            v-if="current == 'auto-criticals'"
+            @back="backToMain()">
+        </auto-criticals-config>
+
+        <fly-hack-config
+            v-if="current == 'fly-hack'"
+            @back="backToMain()">
+        </fly-hack-config>
+
+    </div>
+
+    <script type="module" src="app.js"></script>
+
+</body>
+</html>
